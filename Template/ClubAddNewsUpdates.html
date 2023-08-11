@@ -1,0 +1,32 @@
+{% extends 'ClubPage.html' %}
+{% block body %}
+
+<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}		
+        <table align="center">
+            <tr>
+                <td><label >News & Updates</label></td>
+                <td><input type="text" name="clname" class="textbox"></td>
+            </tr>
+           
+            <tr>
+                <td><label>Details</label></td>
+                <td><input type="text" name="match" class="textbox"></td>
+            </tr>
+           
+            <tr>
+                <td><label>Image</label></td>
+                <td><input type="file" name="file" class="textbox"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Add Now" name="ADD" class="but"/></td>
+            </tr>
+        </table>
+        {% if msg %}
+<script>
+    alert("{{msg}}")
+</script>
+{% endif %}
+        
+        </form>
+        {% endblock %}

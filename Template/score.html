@@ -1,0 +1,67 @@
+{% extends 'PREDICTBASE.html' %}
+{% block body %}
+<form action="#" method="post" >
+{% csrf_token %}
+{% if data %}
+<center><b><h1 style="color: cyan;">PROJECTED SCORE IS {{data.0}}</h1></b></center>
+
+<script>
+    alert("PROJECTED SCORE IS  "+"{{data.0}}");
+</script>
+{% endif %}
+
+
+
+<div class="col-md-8 single-page-left">
+    
+    <div class="single-page-info">
+        <!--background-->
+	<h1>IPL Match Prediction </h1>
+	<div class="register-form-w3layouts">
+		<!-- Form starts here -->
+        
+	
+     
+        <form action="/submit" method=post onsubmit="">
+            {% csrf_token %}
+			<h3 class="sub-heading-agileits">Match Details</h3>
+
+			<div class="main-flex-w3ls-sectns">
+				<!--<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input id="datepicker" name="Text" type="text" placeholder="Date of the Match" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+					    required="">
+				</div>-->
+				
+				
+			</div>
+			<div class="main-flex-w3ls-sectns">
+
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+						<input type="number" placeholder="Runs"  class="form-control" name="run" id="run" />					
+                </div>
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+						<input type="number" placeholder="wicket lossed" class="form-control" name="wicket" id="wk" />					
+                </div>
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+						<input type="number" placeholder="curent over" class="form-control" name="over" id="ovr" />					
+                </div>
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+						<input type="number"  placeholder="Striker score" class="form-control" name="s1" id="s1" />					
+                </div>
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+						<input type="number" placeholder="Nonstriker score" class="form-control" name="s2" id="s2" />					
+                </div>
+                
+               
+            </div>
+			<input type="submit" value="Submit">
+			<input type="reset" id="reset" value="Clear Form">
+		</form>
+        </div>
+	</div>
+	<!--copyright-->
+	<div class="copyright">
+	
+    </div>
+    
+    {% endblock %}

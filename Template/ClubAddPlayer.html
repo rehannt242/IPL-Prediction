@@ -1,0 +1,49 @@
+{% extends 'ClubPage.html' %}
+{% block body %}
+
+<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}		
+        <table align="center">
+            <tr>
+                <td><label >Player Name</label></td>
+                <td><input type="text" name="clname" class="textbox"></td>
+            </tr>
+            <tr>
+                <td><label>Type</label></td>
+                <td><input type="radio" name="type" value="Batsman" >Batsman
+                <input type="radio" name="type" value="Bowler" >Bowler
+                <input type="radio" name="type" value="All Rounder" >All Rounder</td>
+            </tr>
+            <tr>
+                <td><label>Category</label></td>
+                <td><input type="radio" name="category" value="Indian" >Indian
+                    <input type="radio" name="category" value="Overseas" >Overseas</td>
+            </tr>
+            <tr>
+                <td><label>Total Matches</label></td>
+                <td><input type="text" name="match" class="textbox"></td>
+            </tr>
+            <tr>
+                <td><label>Total Runs</label></td>
+                <td><input type="text" name="runs" class="textbox"></td>
+            </tr>
+            <tr>
+                <td><label>Total Wickets</label></td>
+                <td><input type="text" name="wickets" class="textbox"></td>
+            </tr>
+            <tr>
+                <td><label>Image</label></td>
+                <td><input type="file" name="file" class="textbox"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Add Now" name="ADD" class="but"/></td>
+            </tr>
+        </table>
+        {% if msg %}
+<script>
+    alert("{{msg}}")
+</script>
+{% endif %}
+        
+        </form>
+        {% endblock %}

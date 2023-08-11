@@ -1,0 +1,93 @@
+{% extends 'PREDICTBASE.html' %}
+{% block body %}
+{% load static %}
+<div style="width: 100%; height:100%" class="hello">
+<form action="#" style="height: 500px;"  method="post" >
+{% csrf_token %}
+{% if data %}
+<!-- <img src="{% static 'happy.jpg' %}" > -->
+<center><b>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 style="color: white; ">Winning team is {{data}}</h1></b></center>
+
+<script>
+    alert("Winning Team is "+"{{data}}");
+</script>
+{% endif %}
+<div class="col-md-8 single-page-left">
+    
+    <div class="single-page-info">
+        <!--background-->
+
+	<div class="register-form-w3layouts">
+		<!-- Form starts here -->
+        
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+    <br>
+	<br>
+	<br>
+	<br>
+	<br>
+    <br>
+	<br>
+	<br>
+	<br>
+	<br>
+    <br>
+	<br>
+	<br>
+	<br>
+	<br>
+    <br>
+	<br>
+	<br>
+	<br>
+	<br>
+    <br>
+	<br>
+	<br>
+	<br>
+	<br>
+    
+
+<h1>
+
+</h1>
+
+
+
+
+        </div>
+	</div>
+	<!--copyright-->
+	<div class="copyright">
+	
+	</div>
+
+	<script type="text/javascript" src="../static/predict/js/jquery-2.2.3.min.js"></script>
+	<!-- Calendar Js -->
+	<script src="../static/predict/js/jquery-ui.js"></script>
+	<script>
+        
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<script type="text/javascript" src="../static/predict/js/javaScriptFunction.js"></script>
+		</div>
+
+	{% endblock %}

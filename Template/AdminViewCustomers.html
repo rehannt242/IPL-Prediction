@@ -1,0 +1,29 @@
+{% extends 'AdminPage.html' %}
+{% block body %}
+<form action="#" method="post" >
+{% csrf_token %}
+{% if data %}
+<table class="customers">
+    <tr>
+            <th>Customer ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+              
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.0}}</td>
+        <td>{{d.1}}</td>
+        <td>{{d.2}}</td>
+        <td>{{d.5}}</td>
+        <td>{{d.4}}</td>
+        
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h1>No customer registered</h1>
+{% endif %}
+{% endblock %}

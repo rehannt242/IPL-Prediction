@@ -1,0 +1,49 @@
+{% extends 'AdminPage.html' %}
+{% block body %}
+
+<form method="POST">
+		{% csrf_token %}		
+        <table align="center">
+            <tr>
+                <td><label >Select Team</label></td>
+                <td><select name="team1" value=" " class="drop">
+                    <option>----Select Team----</option>
+                        {%for c in data %}
+                    <option value="{{c.1}}">{{c.1}}</option>
+                        {% endfor %}
+                </select></td>
+            </tr>
+            <tr>
+                <td><label >Select Team</label></td>
+                <td><select name="team2" value=" " class="drop">
+                    <option>----Select Team----</option>
+                        {%for c in data %}
+                    <option value="{{c.1}}">{{c.1}}</option>
+                        {% endfor %}
+                </select></td>
+            </tr>
+            <tr>
+                <td><label>Venue</label></td>
+                <td><input type="text" name="venue" class="textbox"></td>
+            </tr>
+            <tr>
+                <td><label>Date</label></td>
+                <td><input type="date" name="date" class="textbox"></td>
+            </tr>
+            <tr>
+                <td><label>Time</label></td>
+                <td><input type="text" name="time" class="textbox"></td>
+            </tr>
+            
+            <tr>
+                <td><input type="submit" value="Add Now" name="ADD" class="but"/></td>
+            </tr>
+        </table>
+        {% if msg %}
+<script>
+    alert("{{msg}}")
+</script>
+{% endif %}
+        
+        </form>
+        {% endblock %}

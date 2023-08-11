@@ -1,0 +1,109 @@
+{% extends 'PREDICTBASE.html' %}
+{% block body %}
+<form action="#" method="post" >
+{% csrf_token %}
+{% if data %}
+<center><b><h1 style="color: cyan;">Winning team is {{data}}</h1></b></center>
+
+<script>
+    alert("Winning Team is "+"{{data}}");
+</script>
+{% endif %}
+<div class="col-md-8 single-page-left">
+    
+    <div class="single-page-info">
+        <!--background-->
+	<h1>IPL Match Prediction </h1>
+	<div class="register-form-w3layouts">
+		<!-- Form starts here -->
+        
+	
+     
+        <form action="/submit" method=post onsubmit="">
+            {% csrf_token %}
+			<h3 class="sub-heading-agileits">Match Details</h3>
+
+			<div class="main-flex-w3ls-sectns">
+				<!--<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input id="datepicker" name="Text" type="text" placeholder="Date of the Match" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
+					    required="">
+				</div>-->
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<select class="form-control" id="homeId" name="homeTeam" onchange="getStadium(this.value); checkSameTeam(this.value); ">
+						<option selected disabled>Home Team</option>
+						<option value="Mumbai">MI</option>
+						<option value="Kolkata">KKR</option>
+						<option value="Bangalore">RCB</option>
+						<option value="Pune">CSK</option>
+						<option value="Jaipur">RR</option>
+						<option value="Delhi">DD</option>
+						<option value="Dharamshala">KXIP</option>
+						<option value="Hyderabad">SRH</option>
+					</select>
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<select class="form-control" id="awayId" name="awayTeam" onchange="checkSameTeam(this.value); ">
+						<option  selected disabled hidden>Away Team</option>
+						<option value="Mumbai">MI</option>
+						<option value="Kolkata">KKR</option>
+						<option value="Bangalore">RCB</option>
+						<option value="Pune">CSK</option>
+						<option value="Jaipur">RR</option>
+						<option value="Delhi">DD</option>
+						<option value="Dharamshala">KXIP</option>
+						<option value="Hyderabad">SRH</option>
+					</select>
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<select class="form-control" name="tossWinner" id="toss" onmousedown="whichTeamHasWonToss()">
+						<option selected disabled>Which Team Has Won The Toss</option>
+					</select>
+				</div>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+						<input type="text" class="form-control" name="city" id="city" readonly/>
+					</select>
+				</div>
+                <div >
+                    <h6>Toss Decision?</h6>
+                    <ul class="radio-buttons-w3-agileits" name="tossDecision">
+                        <li>
+                            <input type="radio" value="Bat" id="a-option" name="selector1">
+                            <label for="a-option">Bat</label>
+                            <div class="check"></div>
+                        </li>
+                        <li>
+                            <input type="radio" value="Field" id="b-option" name="selector1">
+                            <label for="b-option">Field</label>
+                            <div class="check">
+                                <div class="inside"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+			<input type="submit" value="Submit">
+			<input type="reset" id="reset" value="Clear Form">
+		</form>
+        </div>
+	</div>
+	<!--copyright-->
+	<div class="copyright">
+	
+	</div>
+
+	<script type="text/javascript" src="../static/predict/js/jquery-2.2.3.min.js"></script>
+	<!-- Calendar Js -->
+	<script src="../static/predict/js/jquery-ui.js"></script>
+	<script>
+        
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<script type="text/javascript" src="../static/predict/js/javaScriptFunction.js"></script>
+		
+
+	{% endblock %}

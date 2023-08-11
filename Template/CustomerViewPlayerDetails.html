@@ -1,0 +1,23 @@
+{% extends 'CustomerSingle.html' %}
+{% block body %}
+<form action="#" method="post" >
+{% csrf_token %}
+<div class="col-md-8 single-page-left">
+    {% for d in data %}
+    <div class="single-page-info">
+        <img src="../static{{d.8}}" alt=""/>
+        <h3 >{{d.1}}</h3>
+        <h4>{{d.3}}</h4>
+        <h4>Total Matches : {{d.5}}</h4>
+        <h4>Total Runs : {{d.6}}</h4>
+        <h4>Total Wickets : {{d.7}}</h4>
+    </div>	
+    
+   
+      <!-- <a href="#" class="button">Book Now</a> -->
+      
+    {% endfor %}
+                    <div class="clearfix"> </div>
+</div>	
+</form>
+{% endblock %}

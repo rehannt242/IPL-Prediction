@@ -1,0 +1,29 @@
+{% extends 'ClubPage.html' %}
+{% block body %}
+<form action="#" method="post" >
+{% csrf_token %}
+{% if data %}
+<table class="customers">
+    <tr>
+            <th>Team</th>
+            <th>Team</th>
+            <th>Venue</th>
+            <th>Date</th>
+            <th>Time</th>
+              
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.1}}</td>
+        <td>{{d.2}}</td>
+        <td>{{d.3}}</td>
+        <td>{{d.4}}</td>
+        <td>{{d.5}}</td>
+        
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<h1>No fixtures added</h1>
+{% endif %}
+{% endblock %}
